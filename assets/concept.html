@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(ellipse 900px 500px at 50% 108%, rgba(203,167,106,.18), transparent 70%),
+      radial-gradient(ellipse 1400px 700px at 50% -30%, rgba(108,140,255,.10), transparent 70%),
+      linear-gradient(180deg, #0a0d16 0%, #0d1018 55%, #120f14 100%);
+    font-family: "Noto Sans SC", system-ui, sans-serif;
+    color: #e8eaf0; position: relative;
+  }
+  .stars { position: absolute; inset: 0; }
+  .stars i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; opacity: .5; }
+  .moon {
+    position: absolute; left: 50%; top: 96px; transform: translateX(-50%);
+    width: 130px; height: 130px; border-radius: 50%;
+    background: radial-gradient(circle at 36% 32%, #f4e9cf, #d9c08a 62%, #b39660);
+    box-shadow: 0 0 90px 28px rgba(203,167,106,.35), 0 0 220px 90px rgba(203,167,106,.12);
+  }
+  .moon::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 62% 40%, rgba(0,0,0,.10), transparent 46%),
+                radial-gradient(circle at 30% 66%, rgba(0,0,0,.08), transparent 38%); }
+  .title { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+  .title h1 { font-size: 64px; letter-spacing: .34em; text-indent: .34em; font-weight: 700;
+    color: #f0e6cf; text-shadow: 0 0 34px rgba(203,167,106,.45); }
+  .title p { margin-top: 12px; font-size: 17px; letter-spacing: .5em; text-indent: .5em;
+    color: #9aa3b8; font-weight: 500; }
+  .table {
+    position: absolute; left: 50%; top: 596px; transform: translateX(-50%);
+    width: 620px; height: 340px; border-radius: 50%;
+    background: radial-gradient(ellipse at 42% 30%, rgba(203,167,106,.14), rgba(18,20,30,.9) 74%);
+    border: 1px solid rgba(203,167,106,.4);
+    box-shadow: inset 0 0 80px rgba(0,0,0,.55), 0 0 70px rgba(203,167,106,.12);
+  }
+  .table .hub {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 168px; height: 168px; border-radius: 50%;
+    background: rgba(10,12,19,.85); border: 1px solid rgba(203,167,106,.3);
+    display: grid; place-content: center; text-align: center; gap: 4px;
+  }
+  .hub b { font-size: 30px; color: #cba76a; }
+  .hub span { font-size: 10px; letter-spacing: .28em; color: #8a93a8; }
+  .hub em { font-style: normal; font-size: 13px; color: #cba76a; }
+  .seat { position: absolute; transform: translate(-50%, -50%); text-align: center; width: 120px; }
+  .ava {
+    width: 62px; height: 62px; margin: 0 auto; border-radius: 50%;
+    display: grid; place-items: center; font-size: 24px; font-weight: 700;
+    border: 1px solid rgba(255,255,255,.16);
+  }
+  .seat b { display: block; margin-top: 6px; font-size: 14px; color: #dfe3ec; }
+  .seat span { font-size: 9px; letter-spacing: .08em; color: #7d8598; }
+  .s1 .ava { background: #3a2030; color: #ef8a8a; } .s1 { left: 12%; top: 62%; }
+  .s2 .ava { background: #1e2b3e; color: #8bb4ec; } .s2 { left: 27%; top: 78%; }
+  .s3 .ava { background: #17302c; color: #83d4ad; } .s3 { left: 50%; top: 84%; }
+  .s4 .ava { background: #3a3222; color: #e8c482; } .s4 { left: 73%; top: 78%; }
+  .s5 .ava { background: #2d2742; color: #ad9ae9; } .s5 { left: 88%; top: 62%; }
+  .s6 .ava { background: #142a33; color: #8ed0d8; } .s6 { left: 74%; top: 33%; }
+  .s7 .ava { background: #33222a; color: #f0a4b8; } .s7 { left: 26%; top: 33%; }
+  .human { position: absolute; left: 8%; top: 30%; width: 150px; text-align: center; }
+  .human .ava {
+    width: 66px; height: 66px; background: linear-gradient(140deg, #3d2f16, #2a2013);
+    color: #ffd98a; border: 1px solid rgba(224,82,82,.55);
+    box-shadow: 0 0 0 6px rgba(224,82,82,.10), 0 0 30px rgba(224,82,82,.3);
+    animation: glow 1.8s infinite; margin-bottom: 6px;
+  }
+  @keyframes glow { 50% { box-shadow: 0 0 0 12px rgba(224,82,82,0), 0 0 44px rgba(224,82,82,.4); } }
+  .human b { font-size: 14px; color: #ffd98a; }
+  .human span { display: block; font-size: 10px; color: #7d8598; margin-top: 3px; }
+  .bubble {
+    position: absolute; left: 220px; top: 88px; width: 300px;
+    padding: 14px 16px; border-radius: 12px; text-align: left;
+    background: linear-gradient(160deg, #241d24, #1a1d27);
+    border: 1px solid rgba(224,82,82,.35); color: #e2e4ea; font-size: 15px; line-height: 1.7;
+    box-shadow: 0 16px 40px rgba(0,0,0,.5);
+  }
+  .bubble b { display: block; color: #f09090; font-size: 12px; margin-bottom: 5px; letter-spacing: .06em; }
+  .wolftag { position: absolute; left: 40%; top: 26%; padding: 6px 16px; border-radius: 99px;
+    background: rgba(224,82,82,.14); border: 1px solid rgba(224,82,82,.45); color: #f09090;
+    font-size: 14px; letter-spacing: .1em; transform: rotate(-4deg); }
+  .footer { position: absolute; left: 0; right: 0; bottom: 40px; text-align: center;
+    color: #6d7488; font-size: 13px; letter-spacing: .2em; }
+  .footer b { color: #cba76a; }
+</style>
+</head>
+<body>
+  <div class="stars">
+    <i style="left:8%;top:12%"></i><i style="left:16%;top:28%;opacity:.8"></i><i style="left:24%;top:8%"></i>
+    <i style="left:33%;top:22%;opacity:.6"></i><i style="left:44%;top:6%"></i><i style="left:58%;top:16%;opacity:.7"></i>
+    <i style="left:66%;top:5%"></i><i style="left:75%;top:24%;opacity:.5"></i><i style="left:84%;top:10%"></i>
+    <i style="left:91%;top:30%;opacity:.8"></i><i style="left:12%;top:52%;opacity:.4"></i><i style="left:90%;top:52%;opacity:.4"></i>
+  </div>
+  <div class="moon"></div>
+  <div class="title">
+    <h1>MOONCOUNCIL</h1>
+    <p>AI WEREWOLF · 月影圆桌</p>
+  </div>
+
+  <div class="table">
+    <div class="hub"><b>☾</b><span>NIGHT 2</span><em>天黑请闭眼</em></div>
+  </div>
+
+  <div class="seat s1"><div class="ava">D</div><b>DeepSeek</b><span>V4-FLASH</span></div>
+  <div class="seat s2"><div class="ava">G</div><b>GPT</b><span>5-NANO</span></div>
+  <div class="seat s3"><div class="ava">Gm</div><b>Gemini</b><span>FLASH-LITE</span></div>
+  <div class="seat s4"><div class="ava">C</div><b>Claude</b><span>HAIKU</span></div>
+  <div class="seat s5"><div class="ava">Q</div><b>QwenMax</b><span>235B-A22B</span></div>
+  <div class="seat s6"><div class="ava">M</div><b>Mistral</b><span>7B</span></div>
+  <div class="seat s7"><div class="ava">L</div><b>Llama</b><span>3.2</span></div>
+
+  <div class="human">
+    <div class="ava">你</div>
+    <b>你（真人）</b>
+    <span>开麦 · 打字 · 夜间操作</span>
+  </div>
+
+  <div class="bubble"><b>CLAUDE · 女巫（存活）</b>昨晚 QwenMax 的发言太干净了——真正的村民不会记对每一票。<br>我今晚把毒药留给他。</div>
+  <div class="wolftag">🌍 中英双语 · 想玩就玩</div>
+
+  <div class="footer">SOLO VS AI · MULTIPLAYER ROOMS · VOICE & TEXT · <b>MOONCOUNCIL.ONRENDER.COM</b></div>
+</body>
+</html>
