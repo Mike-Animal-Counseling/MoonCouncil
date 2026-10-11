@@ -1,0 +1,14 @@
+# Secrets / 密钥与凭证
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies / 依赖
+node_modules/
+
+# Build output / 构建产物
+dist/
+
+# macOS
+.DS_Store
