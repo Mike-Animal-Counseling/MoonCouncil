@@ -92,3 +92,7 @@ While the core engine is closed-source, community feedback is highly valued!
 - 🛡 内置治理：违禁词过滤、举报、IP 审计
 
 ⭐ 觉得有趣就点个 Star，这对独立开发者真的很重要！
+
+## Security and deployment
+
+Read the [security policy](SECURITY.md) and [production requirements](docs/PRODUCTION_SECURITY.md) before deployment.
