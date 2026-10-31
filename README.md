@@ -1,17 +1,15 @@
 # 🎮 MoonCouncil — AI Werewolf: LLM Agents vs You
 
-[![▶ PLAY NOW](https://img.shields.io/badge/%E2%96%B6_PLAY_NOW-mooncouncil.onrender.com-e05252?style=for-the-badge)](https://mooncouncil.onrender.com)
-[![License](https://img.shields.io/badge/code-closed--source-444?style=for-the-badge)](#-faq)
-[![Bilingual](https://img.shields.io/badge/🌐_bilingual-中文_·_EN-8974dd?style=for-the-badge)](#-faq)
+[Preview](#-preview) · [Features](#-key-highlights) · [Architecture](#-tech-stack-showcase) · [Feedback](https://github.com/Mike-Animal-Counseling/MoonCouncil/issues)
 
 [![Stars](https://img.shields.io/github/stars/Mike-Animal-Counseling/MoonCouncil?style=flat-square)](https://github.com/Mike-Animal-Counseling/MoonCouncil/stargazers)
 
-**MoonCouncil** is a production-ready browser game where **LLM agents and humans
+**MoonCouncil** is a browser game where **LLM agents and humans
 play Werewolf together at one roundtable**. No downloads, no account — a nickname
 is all it takes to be seated among six AI players, each running a different
 frontier model with its own personality.
 
-🌐 **Official live entrance:** [https://mooncouncil.onrender.com](https://mooncouncil.onrender.com)
+> **Deployment status:** The hosted game is currently unavailable; the previous Render address returns HTTP 404. Browse the preview and architecture below. A working play link will be added when hosting is restored.
 
 ---
 
@@ -21,14 +19,14 @@ frontier model with its own personality.
 
 *Six AI seats around the moonlit table — DeepSeek, GPT, Gemini, Claude, QwenMax —
 while you join by voice or text. This repository is the official showcase and
-community hub for the live deployment.*
+community hub for the project.*
 
 ---
 
 ## ⚡ Key Highlights
 
 To keep the game fair and the table honest, the core engine stays closed-source —
-but here is exactly what you get when you press play:
+and this page documents the game's features:
 
 - 🤖 **Multi-model cast** — six AI seats, six different frontier LLMs
   (DeepSeek V4 Flash, GPT-5-nano, Gemini Flash, Claude Haiku, Qwen3-235B…),
@@ -53,7 +51,7 @@ but here is exactly what you get when you press play:
 
 ## 🛠️ Tech Stack Showcase
 
-For the developers visiting this repository — the architecture behind the live build:
+For the developers visiting this repository — the game architecture:
 
 - **Game engine:** Python 3.12, fully-async asyncio engine driving a table of
   LLM agents and humans through one WebSocket event stream
@@ -75,8 +73,7 @@ While the core engine is closed-source, community feedback is highly valued!
   include the room code and what happened.
 - **In-game reporting:** hover any chat message and hit the ⚑ button — the
   operator's moderation console receives it instantly.
-- **Found a exploit or privacy concern?** Please report it as an issue with
-  priority. ⭐ If you enjoy the game, drop a star to boost visibility!
+- **Found an exploit or privacy concern?** Follow the [private security reporting process](SECURITY.md); keep vulnerability details out of public issues.
 
 ---
 
@@ -86,7 +83,7 @@ While the core engine is closed-source, community feedback is highly valued!
 性格迥异；真人开麦说话（自动转写进 AI 上下文）或打字，夜间技能亲自操作，投票
 带理由，出局留遗言。房间码/邀请链接联机，匿名即玩，中英双语随时切换。
 
-- 🎮 立即游玩：<https://mooncouncil.onrender.com>
+- 🎮 托管服务目前不可用，原 Render 地址返回 404；恢复后会在此更新可用的游玩链接。
 - 🃏 8 种板子：5–12 人，预女猎守白痴狼王全齐
 - 🎭 AI 表演赛：纯观战模式，看高端模型互相推理与欺诈
 - 🛡 内置治理：违禁词过滤、举报、IP 审计
