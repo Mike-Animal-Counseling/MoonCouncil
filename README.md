@@ -1,6 +1,6 @@
 # 🎮 MoonCouncil — AI Werewolf: LLM Agents vs You
 
-[Preview](#-preview) · [Features](#-key-highlights) · [Architecture](#-tech-stack-showcase) · [Feedback](https://github.com/Mike-Animal-Counseling/MoonCouncil/issues)
+[Preview](#preview) · [Features](#key-highlights) · [Architecture](#tech-stack-showcase) · [Feedback](https://github.com/Mike-Animal-Counseling/MoonCouncil/issues)
 
 [![Stars](https://img.shields.io/github/stars/Mike-Animal-Counseling/MoonCouncil?style=flat-square)](https://github.com/Mike-Animal-Counseling/MoonCouncil/stargazers)
 
@@ -13,7 +13,7 @@ frontier model with its own personality.
 
 ---
 
-## 📺 Preview
+## Preview
 
 ![MoonCouncil concept preview](./assets/preview.png)
 
@@ -23,7 +23,7 @@ community hub for the project.*
 
 ---
 
-## ⚡ Key Highlights
+## Key Highlights
 
 To keep the game fair and the table honest, the core engine stays closed-source —
 and this page documents the game's features:
@@ -49,7 +49,7 @@ and this page documents the game's features:
 
 ---
 
-## 🛠️ Tech Stack Showcase
+## Tech Stack Showcase
 
 For the developers visiting this repository — the game architecture:
 
@@ -65,7 +65,7 @@ For the developers visiting this repository — the game architecture:
 
 ---
 
-## 🤝 Community & Feedback
+## Community & Feedback
 
 While the core engine is closed-source, community feedback is highly valued!
 
